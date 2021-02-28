@@ -1,8 +1,8 @@
 # slothpixel [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/slothpixel/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/slothpixel)
 
-A simplified interface for the Slothpixel API.
+A simplified interface for the Slothpixel API, adjusted for self-hosted instances.
 
-[![NPM Badge](https://nodei.co/npm/slothpixel.png)](https://npmjs.com/package/slothpixel)
+[![NPM Badge](https://nodei.co/npm/phoenix-slothpixel.png)](https://npmjs.com/package/phoenix-slothpixel)
 
 ## Install
 
@@ -16,7 +16,7 @@ npm install slothpixel
 const slothpixel = require("slothpixel");
 
 (async () => {
-	const { uuid } = await slothpixel("players/Richienb");
+	const { uuid } = await slothpixel("players/Richienb", "https://api.slothpixel.me/api");
 
 	console.log(uuid);
 	//=> "56da43a4088d4a7682b6dd431535015e"
@@ -25,13 +25,19 @@ const slothpixel = require("slothpixel");
 
 ## API
 
-### slothpixel(endpoint, options?)
+### slothpixel(endpoint, url, options?)
 
 #### endpoint
 
 Type: `string`
 
 The [API endpoint](https://docs.slothpixel.me) to call.
+
+### url
+
+Type: `string`
+
+The API URL to call, defaults to api.slothpixel.me/api.
 
 #### options
 
