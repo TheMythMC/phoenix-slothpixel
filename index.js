@@ -12,13 +12,13 @@ class SlothpixelError extends Error {
 	}
 }
 
-module.exports = async (endpoint, options) => {
+module.exports = async (endpoint, slothpixelURL, options) => {
 	if (typeof endpoint !== "string") {
 		throw new TypeError("An endpoint must be provided!")
 	}
 
 	const result = await ky(endpoint, {
-		prefixUrl: "https://api.slothpixel.me/api/",
+		prefixUrl: slothpixelURL || "https://api.slothpixel.me/api/",
 		searchParams: options
 	})
 
@@ -36,7 +36,7 @@ module.exports = async (endpoint, options) => {
 }
 
 module.exports.graphql = async data => {
-	const result = await ky.post("https://api.slothpixel.me/api/graphql", {
+	const result = await ky.post((slothpixelURL || "https://api.slothpixel.me/api/graphql"), {
 		json: data
 	})
 
