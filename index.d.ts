@@ -28,7 +28,7 @@ declare const slothpixel: {
 	})();
 	```
 	*/
-	<ReturnType = object | object[]>(endpoint: string, options?: Record<string, string | number | boolean>): Promise<ReturnType>
+	<ReturnType = object | object[]>(endpoint: string, url: string, options?: Record<string, string | number | boolean>): Promise<ReturnType>
 
 	/**
 	Send a request to the Slothpixel Graphql API.
