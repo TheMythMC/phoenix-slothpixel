@@ -1,6 +1,6 @@
 {
 	"name": "phoenix-slothpixel",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"description": "A simplified interface for the Slothpixel API.",
 	"repository": "https://github.com/PhoenixBotMC/phoenix-slothpixel.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>, Adam Reisenauer <atr10605@hotmail.com>",
