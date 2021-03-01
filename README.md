@@ -1,4 +1,4 @@
-# slothpixel [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/slothpixel/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/slothpixel)
+# phoenix-slothpixel
 
 A simplified interface for the Slothpixel API, adjusted for self-hosted instances.
 
@@ -7,13 +7,13 @@ A simplified interface for the Slothpixel API, adjusted for self-hosted instance
 ## Install
 
 ```sh
-npm install slothpixel
+npm install phoenix-slothpixel
 ```
 
 ## Usage
 
 ```js
-const slothpixel = require("slothpixel");
+const slothpixel = require("phoenix-slothpixel");
 
 (async () => {
 	const { uuid } = await slothpixel("players/Richienb", "https://api.slothpixel.me/api");
@@ -37,7 +37,7 @@ The [API endpoint](https://docs.slothpixel.me) to call.
 
 Type: `string`
 
-The API URL to call, defaults to api.slothpixel.me/api.
+The API URL to call, defaults to api.slothpixel.me/api (if put `null`).
 
 #### options
 
@@ -56,7 +56,7 @@ Type: `object`
 The Graphql data to send. See https://graphql.org/learn/serving-over-http/#post-request.
 
 ```js
-const slothpixel = require("slothpixel");
+const slothpixel = require("phoenix-slothpixel");
 
 (async () => {
 	const query = `{
@@ -70,7 +70,7 @@ const slothpixel = require("slothpixel");
 	const data = await slothpixel.graphql({ query });
 
 	console.log(data.players.player.uuid)
-	//=> "56da43a4088d4a7682b6dd431535015e"
+ 	//=> "56da43a4088d4a7682b6dd431535015e"
 })();
 ```
 
