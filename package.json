@@ -9,7 +9,8 @@
 	"files": [
 		"index.js",
 		"index.d.ts",
-		"typings/"
+		"Guild.ts",
+		"Player.ts"
 	],
 	"engines": {
 		"node": ">=12"
