@@ -35,8 +35,8 @@ module.exports = async (endpoint, slothpixelURL, options) => {
 	return data
 }
 
-module.exports.graphql = async data => {
-	const result = await ky.post((slothpixelURL || "https://api.slothpixel.me/api/graphql"), {
+module.exports.graphql = async (data, slothpixelURL = "https://api.slothpixel.me/api/graphql") => {
+	const result = await ky.post((slothpixelURL), {
 		json: data
 	})
 
@@ -55,6 +55,70 @@ module.exports.graphql = async data => {
 	}
 
 	return data_
+}
+
+module.exports.playerStats = async (player, url = 'https://api.slothpixel.me/api/players/') => {
+	const result = ky.get(`${url}${player}`);
+	
+	if (!result) {
+		throw new SlothpixelError("Slothpixel returned an empty response.")
+	}
+
+	const data = await result.json()
+
+	if (data.error) {
+		throw new SlothpixelError(data.error)
+	}
+
+	return data
+}
+
+module.exports.guildStatsByName = async (name, url = 'https://api.slothpixel.me/api/guilds/name/') => {
+	const result = ky.get(`${url}${name}`);
+	
+	if (!result) {
+		throw new SlothpixelError("Slothpixel returned an empty response.")
+	}
+
+	const data = await result.json()
+
+	if (data.error) {
+		throw new SlothpixelError(data.error)
+	}
+
+	return data
+}
+
+module.exports.guildStatsByID = async (id, url = 'https://api.slothpixel.me/api/guilds/id/') => {
+	const result = ky.get(`${url}${id}`);
+	
+	if (!result) {
+		throw new SlothpixelError("Slothpixel returned an empty response.")
+	}
+
+	const data = await result.json()
+
+	if (data.error) {
+		throw new SlothpixelError(data.error)
+	}
+
+	return data
+}
+
+module.exports.guildStatsByPlayer = async (player, url = 'https://api.slothpixel.me/api/guilds/') => {
+	const result = ky.get(`${url}${player}`);
+	
+	if (!result) {
+		throw new SlothpixelError("Slothpixel returned an empty response.")
+	}
+
+	const data = await result.json()
+
+	if (data.error) {
+		throw new SlothpixelError(data.error)
+	}
+
+	return data;
 }
 
 module.exports.SlothpixelError = SlothpixelError

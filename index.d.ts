@@ -54,6 +54,17 @@ declare const slothpixel: {
 	```
 	*/
 	graphql<ReturnType = object>(data: GraphqlData): Promise<ReturnType>
+
+	/* Use these for the typings */
+
+	playerStats<ReturnType = Player>(name: string, url?: string): Promise<ReturnType>
+
+	guildStatsByName<ReturnType = Guild>(guildName: string, url?: string): Promise<ReturnType>
+
+	guildStatsByID<ReturnType = Guild>(guildID: string, url?: string): Promise<ReturnType>
+
+	guildStatsByPlayer<ReturnType = Guild>(player: string, url?: string): Promise<ReturnType>
+
 }
 
 export = slothpixel
