@@ -1,6 +1,6 @@
 {
 	"name": "phoenix-slothpixel",
-	"version": "1.3.5",
+	"version": "1.3.7",
 	"description": "A simplified interface for the Slothpixel API.",
 	"repository": "https://github.com/PhoenixBotMC/phoenix-slothpixel.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>, Adam <adam@phoenixproject.xyz>",
@@ -9,8 +9,7 @@
 	"files": [
 		"index.js",
 		"index.d.ts",
-		"Guild.ts",
-		"Player.ts"
+		"typings/"
 	],
 	"engines": {
 		"node": ">=12"
