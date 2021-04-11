@@ -1,4 +1,4 @@
-interface Guild {
+export default interface Guild {
     name: string,
     id: string,
     created: string,

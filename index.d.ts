@@ -1,4 +1,8 @@
+import Guild from './typings/Guild'
+import Player from './typings/Player'
+
 /** An error thrown by the API. */
+
 declare class SlothpixelError extends Error {
 	message: string
 }

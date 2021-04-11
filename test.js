@@ -19,3 +19,4 @@ test("graphql", async t => {
 
 	t.deepEqual(data, { players: { player: { uuid: "56da43a4088d4a7682b6dd431535015e" } } })
 })
+

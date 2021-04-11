@@ -1,4 +1,4 @@
-interface Player {
+export default interface Player {
     uuid: string,
     username: string,
     name_history: string[],
