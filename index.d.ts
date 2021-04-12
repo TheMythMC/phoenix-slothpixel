@@ -1,5 +1,5 @@
-import Guild from './typings/Guild'
-import Player from './typings/Player'
+import Guild from './Guild'
+import Player from './Player'
 
 /** An error thrown by the API. */
 
