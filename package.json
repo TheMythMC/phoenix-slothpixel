@@ -29,7 +29,9 @@
 	],
 	"dependencies": {
 		"aggregate-error": "^3.0.1",
+		"ava": "^3.15.0",
 		"ky": "^0.20.0",
-		"ky-universal": "^0.6.0"
+		"ky-universal": "^0.6.0",
+		"node-fetch": "^2.6.1"
 	}
 }

@@ -1,6 +1,7 @@
 "use strict"
 
 const AggregateError = require("aggregate-error")
+const fetch = require('node-fetch')
 const ky = require("ky-universal").extend({
 	throwHttpErrors: false
 })
@@ -58,7 +59,7 @@ module.exports.graphql = async (data, slothpixelURL = "https://api.slothpixel.me
 }
 
 module.exports.playerStats = async (player, url = 'https://api.slothpixel.me/api/players/') => {
-	const result = await ky.get(`${url}${player}`);
+	const result = await fetch(`${url}${player}`);
 	
 	if (!result) {
 		throw new SlothpixelError("Slothpixel returned an empty response.")
@@ -74,7 +75,7 @@ module.exports.playerStats = async (player, url = 'https://api.slothpixel.me/api
 }
 
 module.exports.guildStatsByName = async (name, url = 'https://api.slothpixel.me/api/guilds/name/') => {
-	const result = await ky.get(`${url}${name}`);
+	const result = await fetch(`${url}${name.replace(' ', '+')}`);
 	
 	if (!result) {
 		throw new SlothpixelError("Slothpixel returned an empty response.")
@@ -90,7 +91,7 @@ module.exports.guildStatsByName = async (name, url = 'https://api.slothpixel.me/
 }
 
 module.exports.guildStatsByID = async (id, url = 'https://api.slothpixel.me/api/guilds/id/') => {
-	const result = await ky.get(`${url}${id}`);
+	const result = await fetch(`${url}${id}`);
 	
 	if (!result) {
 		throw new SlothpixelError("Slothpixel returned an empty response.")
@@ -106,7 +107,7 @@ module.exports.guildStatsByID = async (id, url = 'https://api.slothpixel.me/api/
 }
 
 module.exports.guildStatsByPlayer = async (player, url = 'https://api.slothpixel.me/api/guilds/') => {
-	const result = await ky.get(`${url}${player}`);
+	const result = await fetch(`${url}${player}`);
 	
 	if (!result) {
 		throw new SlothpixelError("Slothpixel returned an empty response.")
